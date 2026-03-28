@@ -1,0 +1,29 @@
+servers:
+  - host: "49.235.161.106"
+    port: 22
+    username: "root"
+    key_path: ""  # SSH private key path, e.g. ~/.ssh/id_rsa
+    # password: ""  # Use password auth if key_path is empty
+
+inspection:
+  ports_to_check:
+    - 22
+    - 80
+    - 443
+    - 3306
+    - 6379
+    - 8080
+    - 27017
+  
+  processes_to_check:
+    - nginx
+    - mysql
+    - redis
+    - java
+    - python
+    - docker
+    - sshd
+
+report:
+  output_dir: "../reports"
+  filename_prefix: "server_inspection"
